@@ -5,9 +5,9 @@ require 'facebook/user_info'
 
 
 class FacebookController < ApplicationController
-  GET_ACCESS_TOKEN_URL = 'https://graph.facebook.com/oauth/access_token?client_id=431545406911968&redirect_uri=http://localhost:3000/done&client_secret=9806a77e7fc7f1843f392f1571f2e204&code='
-  GET_USER_INFO_URL = 'https://graph.facebook.com/me?fields=name,picture,friends&access_token='
-  GET_USER_ACCESS_URL = 'https://www.facebook.com/dialog/oauth?client_id=431545406911968&scope=user_friends&redirect_uri=http://localhost:3000/done'  
+  GET_ACCESS_TOKEN_URL = "https://graph.facebook.com/oauth/access_token?client_id=431545406911968&redirect_uri=#{ENV['HOST_ADDRESS']}/done&client_secret=9806a77e7fc7f1843f392f1571f2e204&code="
+  GET_USER_INFO_URL = "https://graph.facebook.com/me?fields=name,picture,friends&access_token="
+  GET_USER_ACCESS_URL = "https://www.facebook.com/dialog/oauth?client_id=431545406911968&scope=user_friends&redirect_uri=#{ENV['HOST_ADDRESS']}/done"
   
   def index
     redirect_to GET_USER_ACCESS_URL

@@ -16,13 +16,6 @@
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
-require 'vcr'
-require 'webmock/rspec'
-
-VCR.configure do |c|
-  c.cassette_library_dir = 'spec/vcr'
-  c.hook_into :webmock
-end
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
