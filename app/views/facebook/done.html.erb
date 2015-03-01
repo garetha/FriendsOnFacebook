@@ -1,0 +1,8 @@
+<h1>Your facebook profile</h1>
+<img src='<%= @user_info.picture_url %>' />
+<p><%= @user_info.name %></p>
+
+<h2>Your friends that also use this app</h2>
+<% @user_info.friends_list.each do |friend| %>
+ <p><%= friend['name'] %></p>
+<% end %>
