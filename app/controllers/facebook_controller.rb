@@ -24,24 +24,29 @@ class FacebookController < ApplicationController
         user_res = get_user_info(access_token)   
         
         if(user_res.code.eql? '200')
-          user_info_data = JSON.parse(user_res.body)
-          @user_info = UserInfo.new(user_info_data)
+          session[:user_info] = user_res.body
+          redirect_to :show
         else
           error = JSON.parse(user_res.body)
-          flash[:error] = error['error']['message']
-          render status: :bad_request
+          flash.now[:error] = error['error']['message']
+          render :show, status: :bad_request
         end
 
       else
         error = JSON.parse(token_res.body)
-        flash[:error] = error['error']['message']
-        render status: :bad_request
+        flash.now[:error] = error['error']['message']
+        render :show,  status: :bad_request
       end
       
     else
-      flash[:error] = 'Login failed: Code is missing' 
-      render status: :bad_request     
+      flash.now[:error] = 'Login cancelled' 
+      render :show, status: :bad_request     
     end
+  end
+  
+  def show
+    user_info_data = JSON.parse(session[:user_info]) # just to avoid caching
+    @user_info =  UserInfo.new(user_info_data)
   end
   
   private

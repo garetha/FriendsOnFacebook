@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/oauth/access_token?client_id=431545406911968&client_secret=9806a77e7fc7f1843f392f1571f2e204&code=AQCpMw_f0aIruBi-PEs341sZziqOS64SjgYaJhV1rt8f-lC8zcKxcKw4A9VKxMyHt5_o1iwkkh5V-wFWlB3H_nv1cOImvDYAHJY4hXGrt6bPDX6uWVrkLLGKBZlXFRqHEJbPG55-7SlOadslMQ8yj-ocnPm_4MeqYXRe1-ijvIT0xc9XwCHImJ5UCu5XgjoZUCPb27FMiezYuwanWqp07J27bPMPY-e88MLp3lVc1RjxGuA8hgJOACDDLGGgxIZ6s-00tkdwYjMPPYSQ5CK3W8VZA2f635LzrWlLHhr9Dj4326OhVsDinFG8ywRzbrE4BaY&redirect_uri=http://localhost:3000/done
+    uri: https://graph.facebook.com/oauth/access_token?client_id=431545406911968&client_secret=9806a77e7fc7f1843f392f1571f2e204&code=AQCpMw_f0aIruBi-PEs341sZziqOS64SjgYaJhV1rt8f-lC8zcKxcKw4A9VKxMyHt5_o1iwkkh5V-wFWlB3H_nv1cOImvDYAHJY4hXGrt6bPDX6uWVrkLLGKBZlXFRqHEJbPG55-7SlOadslMQ8yj-ocnPm_4MeqYXRe1-ijvIT0xc9XwCHImJ5UCu5XgjoZUCPb27FMiezYuwanWqp07J27bPMPY-e88MLp3lVc1RjxGuA8hgJOACDDLGGgxIZ6s-00tkdwYjMPPYSQ5CK3W8VZA2f635LzrWlLHhr9Dj4326OhVsDinFG8ywRzbrE4BaY&redirect_uri=/done
     body:
       encoding: US-ASCII
       string: ''

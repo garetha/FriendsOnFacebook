@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/oauth/access_token?client_id=431545406911968&client_secret=9806a77e7fc7f1843f392f1571f2e204&code=123&redirect_uri=http://localhost:3000/done
+    uri: https://graph.facebook.com/oauth/access_token?client_id=431545406911968&client_secret=9806a77e7fc7f1843f392f1571f2e204&code=123&redirect_uri=/done
     body:
       encoding: US-ASCII
       string: ''
