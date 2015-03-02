@@ -20,21 +20,12 @@ class FacebookController < ApplicationController
       token_res = get_access_token(code)
       
       if(token_res.code.eql? '200')
-        access_token = CGI::parse(token_res.body)['access_token'].join        
-        user_res = get_user_info(access_token)   
-        
-        if(user_res.code.eql? '200')
-          session[:user_info] = user_res.body
-          redirect_to :show
-        else
-          error = JSON.parse(user_res.body)
-          flash.now[:error] = error['error']['message']
-          render :show, status: :bad_request
-        end
-
+        access_token = CGI::parse(token_res.body)['access_token'].join
+        session[:access_token] = access_token
+        redirect_to :show
       else
         error = JSON.parse(token_res.body)
-        flash.now[:error] = error['error']['message']
+        flash.now[:error] = get_error_message(error)
         render :show,  status: :bad_request
       end
       
@@ -45,11 +36,22 @@ class FacebookController < ApplicationController
   end
   
   def show
-    user_info_data = JSON.parse(session[:user_info]) # just to avoid caching
-    @user_info =  UserInfo.new(user_info_data)
+    user_res = get_user_info(session[:access_token])
+    if(user_res.code.eql? '200')
+      user_info_data = JSON.parse(user_res.body)
+      @user_info =  UserInfo.new(user_info_data)
+    else
+      error = JSON.parse(user_res.body)
+      flash.now[:error] = get_error_message(error)
+      render status: :bad_request
+    end
   end
   
   private
+
+  def get_error_message(error)
+    return error['error']['message']
+  end
   
   def get_user_info(access_token)
     uri = URI.parse(GET_USER_INFO_URL+access_token)  

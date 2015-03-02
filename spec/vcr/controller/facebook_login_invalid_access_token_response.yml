@@ -2,52 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/oauth/access_token?client_id=431545406911968&client_secret=9806a77e7fc7f1843f392f1571f2e204&code=AQCpMw_f0aIruBi-PEs341sZziqOS64SjgYaJhV1rt8f-lC8zcKxcKw4A9VKxMyHt5_o1iwkkh5V-wFWlB3H_nv1cOImvDYAHJY4hXGrt6bPDX6uWVrkLLGKBZlXFRqHEJbPG55-7SlOadslMQ8yj-ocnPm_4MeqYXRe1-ijvIT0xc9XwCHImJ5UCu5XgjoZUCPb27FMiezYuwanWqp07J27bPMPY-e88MLp3lVc1RjxGuA8hgJOACDDLGGgxIZ6s-00tkdwYjMPPYSQ5CK3W8VZA2f635LzrWlLHhr9Dj4326OhVsDinFG8ywRzbrE4BaY&redirect_uri=/done
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - text/plain; charset=UTF-8
-      Access-Control-Allow-Origin:
-      - '*'
-      X-Fb-Rev:
-      - '1620396'
-      Pragma:
-      - no-cache
-      Cache-Control:
-      - private, no-cache, no-store, must-revalidate
-      Facebook-Api-Version:
-      - v1.0
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      X-Fb-Debug:
-      - waeLOO4fch/dTfOlAIWPMJo8YqbbyQMsLJKVuTwNYzD1g3Dyop6ODHMLwAUVlE38Awl8p0Anm1a35BPi2eZgOQ==
-      Date:
-      - Sun, 01 Mar 2015 09:14:39 GMT
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '245'
-    body:
-      encoding: UTF-8
-      string: access_token=1&expires=5106117
-    http_version: 
-  recorded_at: Sun, 01 Mar 2015 09:37:15 GMT
-- request:
-    method: get
-    uri: https://graph.facebook.com/me?access_token=1&fields=name,picture,friends
+    uri: https://graph.facebook.com/me?access_token=123&fields=name,picture,friends
     body:
       encoding: US-ASCII
       string: ''
